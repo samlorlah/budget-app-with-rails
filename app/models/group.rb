@@ -4,4 +4,6 @@ class Group < ApplicationRecord
   validates :icon, presence: true, length: { in: 1..150 }
 
   belongs_to :author, class_name: 'User'
+  has_many :group_expenses, dependent: :destroy
+  has_many :expenses, through: :group_expenses, dependent: :destroy
 end
