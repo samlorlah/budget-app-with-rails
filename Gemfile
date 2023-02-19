@@ -8,6 +8,10 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'bootstrap', '~> 5.2.2'
+
+gem 'jquery-rails'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
