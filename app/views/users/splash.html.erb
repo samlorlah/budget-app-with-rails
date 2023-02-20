@@ -1,0 +1,17 @@
+<% content_for :title, 'Plan Me' %>
+
+<div class="splash-img" >
+  <%= image_tag ("splash_bg.png")%>
+</div>
+<div class="auth-btns row">
+  <% if current_user %>
+    <div class="col-sm-12"></div>
+  <% else %>
+    <div class="col-sm-12">
+      <%= link_to "Login", new_user_session_path, class: "btn btn-primary w-100 btn-block mb-2" %>
+    </div>
+    <div class="col-sm-12">
+      <%= link_to "Signup", new_user_registration_path, class: "btn btn-primary w-100 btn-block mb-2" %>
+    </div>
+  <% end %>
+</div>

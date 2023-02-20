@@ -12,6 +12,10 @@ gem 'bootstrap', '~> 5.2.2'
 
 gem 'jquery-rails'
 
+gem "devise"
+
+gem "font-awesome-sass", "~> 6.3.0"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

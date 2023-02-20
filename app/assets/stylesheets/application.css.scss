@@ -12,4 +12,27 @@
  *
  */
 
- @import "bootstrap";
+@import "font-awesome";
+@import "bootstrap";
+
+.splash-img {
+  text-align: center;
+  margin-top: 40vh;
+  height: 10vh;
+}
+
+.splash-img img {
+  height: 100%;
+}
+
+.auth-btns {
+  position: absolute;
+  top: 88vh;
+  width: 33%;
+}
+
+nav {
+  height: 80px;
+  width: 100%;
+  background-color: #3778c2;
+}
