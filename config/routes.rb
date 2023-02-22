@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   root 'users#splash'
 
   resources :users, only: [:splash]
-  resources :groups, only: [:index]
+  resources :groups, only: [:index, :new, :create, :edit, :update, :destroy], :path => "categories" do
+    resources :expenses, only: [:index, :new, :create, :edit, :update, :destroy], :path => "transactions"
+  end
 end
