@@ -1,15 +1,26 @@
 <nav>
   <div class="row p-3 text-white">
-    <div class="col-sm-4">
+    <div class="col-4">
       <%if controller_name == 'groups' and action_name == 'index' %>
         <i class="fa fa-bars fa-2x"></i>
-      <% else %>
+      <%elsif controller_name == 'groups' and action_name != 'index' %>
+        <%= link_to groups_path do %>
+          <i class="fa fa-arrow-left text-white fa-2x"></i>
+        <%end%>
+      <%elsif controller_name == 'expenses' and action_name == 'index' %>
+        <%= link_to groups_path do %>
+          <i class="fa fa-arrow-left text-white fa-2x"></i>
+        <%end%>
+      <%elsif controller_name == 'expenses' and action_name != 'index' %>
+        <%= link_to group_expenses_path do %>
+          <i class="fa fa-arrow-left text-white fa-2x"></i>
+        <%end%>
       <% end %>
     </div>
-    <div class="col-sm-4">
+    <div class="col-4">
       <h2>PlanMe</h2>
     </div>
-    <div class="col-sm-4" style="text-align: right">
+    <div class="col-4" style="text-align: right">
       <i class="fa fa-right-from-bracket fa-2x"></i>
     </div>
   </div>

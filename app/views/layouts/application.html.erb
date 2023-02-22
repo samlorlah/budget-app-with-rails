@@ -12,10 +12,14 @@
 
   <body class="container">
     <div class="row">
-      <div class="col-md-4 offset-md-4 h-100" style="border: 1px solid #000; min-height: 100vh; padding: 0">
+      <div class="col-md-4 offset-md-4 h-100 main-screen">
         <%= render 'shared/nav'%>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <%if notice %>
+        <p class="notice alert alert-success" role="alert"><%= notice %></p>
+        <%end%>
+        <%if alert%>
+        <p class="alert alert-success" role="alert"><%= alert %></p>
+        <%end%>
         <%= yield %>
       </div>
     </div>
