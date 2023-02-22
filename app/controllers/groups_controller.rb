@@ -32,11 +32,14 @@ class GroupsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:id])
-
-    if @group.destroy
-      flash[:success] = 'Category was successfully removed.'
+    if @group.expenses.empty?
+      if @group.destroy
+        flash[:success] = 'Category was successfully removed.'
+      else
+        flash[:error] = 'Error: Category could not be removed'
+      end
     else
-      flash[:error] = 'Error: Category could not be removed'
+      flash[:error] = 'Error: Category with expense can not be deleted.'
     end
     redirect_to groups_url
   end
