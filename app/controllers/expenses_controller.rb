@@ -34,7 +34,7 @@ class ExpensesController < ApplicationController
     @expense = @group.expenses.find(params[:id])
     @group_expense = GroupExpense.where(group: @group, expense: @expense)
     if @expense.update(expense_params)
-      @group_expense = @group_expense.update(group: @category, expense: @expense)
+      @group_expense.update(group: @category, expense: @expense)
       redirect_to group_expenses_url(@group), notice: 'Transaction was successfully updated.'
     else
       render :new, status: :unprocessable_entity
