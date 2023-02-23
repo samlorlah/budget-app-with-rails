@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.all
+    @groups = Group.includes(:group_expenses).where(author_id: current_user.id).order(created_at: :desc)
   end
 
   def new

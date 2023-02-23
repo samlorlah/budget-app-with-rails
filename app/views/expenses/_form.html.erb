@@ -8,5 +8,5 @@
 </div>
 <div class="mb-3">
   <%= form.label :category, class: "form-label" %><br />
-  <%= form.select :category, Group.all.order(name: :asc).map {|category| [ category.name, category.id ] }, {}, class: "form-select", multiple: "multiple" %>
+  <%= form.select :category, Group.includes(:group_expenses).where(author_id: current_user.id).order(created_at: :desc).order(name: :asc).map {|category| [ category.name, category.id ] }, {}, class: "form-select", multiple: "multiple" %>
 </div>
