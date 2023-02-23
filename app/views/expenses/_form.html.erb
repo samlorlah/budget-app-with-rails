@@ -6,3 +6,7 @@
   <%= form.label :amount, class: "form-label" %><br />
   <%= form.number_field :amount, autofocus: true, autocomplete: "amount", class: "form-control" %>
 </div>
+<div class="mb-3">
+  <%= form.label :category, class: "form-label" %><br />
+  <%= form.select :category, Group.all.order(name: :asc).map {|category| [ category.name, category.id ] }, {}, class: "form-select", multiple: "multiple" %>
+</div>

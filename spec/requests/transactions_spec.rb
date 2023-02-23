@@ -26,7 +26,6 @@ RSpec.describe 'Expenses', type: :request do
     expect(response).to have_http_status(:ok)
   end
 
-
   it 'should make a post with success message' do
     get new_group_expense_path(@category)
     post group_expenses_path(@category), params: { expense: { name: 'Avengers: Endgame', amount: 10.99 } }

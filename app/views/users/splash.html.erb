@@ -3,15 +3,25 @@
 <div class="splash-img" >
   <%= image_tag ("splash_bg.png")%>
 </div>
-<div class="auth-btns row">
-  <% if current_user %>
-    <div class="col-sm-12"></div>
-  <% else %>
-    <div class="col-sm-12">
-      <%= link_to "Login", new_user_session_path, class: "btn btn-primary w-100 btn-block mb-2" %>
+<% if current_user %>
+  <footer class="bottom-btns p-2">
+    <div class="d-flex justify-content-center text-white mb-3">
+      <%= link_to groups_path, class: "footer-btn" do%>
+        <span class="text-center"> Categories </span>
+      <%end%>
     </div>
-    <div class="col-sm-12">
-      <%= link_to "Signup", new_user_registration_path, class: "btn btn-primary w-100 btn-block mb-2" %>
+  </footer>
+<% else %>
+  <footer class="splash-footer p-2">
+    <div class="d-flex justify-content-center text-white mb-3">
+      <%= link_to new_user_session_path, class: "footer-btn" do%>
+        <span class="text-center"> Login </span>
+      <%end%>
     </div>
+    <div class="d-flex justify-content-center text-white">
+      <%= link_to new_user_registration_path, class: "footer-btn" do%>
+        <span class="text-center"> Signup </span>
+      <%end%>
+    </div>
+  </footer>
   <% end %>
-</div>
