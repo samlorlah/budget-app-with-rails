@@ -21,7 +21,12 @@
       <h2>PlanMe</h2>
     </div>
     <div class="col-4" style="text-align: right">
-      <i class="fa fa-right-from-bracket fa-2x"></i>
+    <%if current_user %>
+      <%= button_to destroy_user_session_path, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "logout-btn" do%>
+          <i class="fa fa-right-from-bracket fa-2x"></i>
+      <%end%>
+    <%else%>
+    <%end%>
     </div>
   </div>
 </nav>
