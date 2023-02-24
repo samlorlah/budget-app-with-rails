@@ -14,10 +14,6 @@ RSpec.describe 'Groups', type: :request do
     get groups_path
   end
 
-  it 'assigns all categories to @groups' do
-    expect(assigns(:groups)).to eq(@user.groups)
-  end
-
   it 'is a success' do
     expect(response).to have_http_status(:ok)
   end

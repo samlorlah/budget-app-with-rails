@@ -28,7 +28,8 @@ RSpec.describe 'Expenses', type: :request do
 
   it 'should make a post with success message' do
     get new_group_expense_path(@category)
-    post group_expenses_path(@category), params: { expense: { name: 'Avengers: Endgame', amount: 10.99 } }
+    post group_expenses_path(@category),
+         params: { expense: { name: 'Avengers: Endgame', amount: 10.99, category: ['', @category.id] } }
 
     get group_expenses_path(@category)
     expect(response.body).to match 'Transaction was successfully created.'
@@ -36,7 +37,7 @@ RSpec.describe 'Expenses', type: :request do
 
   it 'should redirect to new with status unprocessable_entity if name is nil' do
     get new_group_expense_path(@category)
-    post group_expenses_path(@category), params: { expense: { name: nil, amount: 10.99 } }
+    post group_expenses_path(@category), params: { expense: { name: nil, amount: 10.99, category: ['', @category.id] } }
     expect(response).to have_http_status(:unprocessable_entity)
   end
 
